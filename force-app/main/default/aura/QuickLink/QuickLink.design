@@ -5,7 +5,7 @@
   <design:component label="配置">
 
     <!--静态的-->
-    <design:attribute name="componentID"  label="类别"  description=""/>
+    <design:attribute name="componentID"  label="组件ID"  description=""/>
 
     <design:attribute name="type" datasource="Report,Doc" label="类别" default="Report" description="请选择类型"/>
 

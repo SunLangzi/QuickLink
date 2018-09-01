@@ -3,7 +3,8 @@
  -->
 
 <aura:component description="QuickLink" implements="flexipage:availableForAllPageTypes" controller="QuickLinkController">
-    <aura:attribute name="type" type="String" default="" required="true"/>
+
+  <aura:attribute name="type" type="String" default="" required="true"/>
     <aura:attribute name="componentID" type="String" default="" required="true"/>
     <aura:attribute name="title" type="String" default="" required="true"/>
     <aura:attribute name="titleT" type="String" default="" access="private"/>
