@@ -1,0 +1,46 @@
+<!--
+ - Created by Spring on 2018/9/1.
+ -->
+
+<aura:component description="QuickLink" implements="flexipage:availableForAllPageTypes" controller="QuickLinkController">
+    <aura:attribute name="type" type="String" default="" required="true"/>
+    <aura:attribute name="componentID" type="String" default="" required="true"/>
+    <aura:attribute name="title" type="String" default="" required="true"/>
+    <aura:attribute name="titleT" type="String" default="" access="private"/>
+    <aura:attribute name="column" type="Integer" default="1" />
+    <aura:attribute name="titleIconName" type="String" default="standard:account" />
+    <aura:attribute name="itemIconName" type="String" default="standard:report" />
+    <aura:attribute name="resultList" type="Object[]" />
+
+
+    <aura:handler name="init" action="{!c.InitAction}" value="{!this}"/>
+
+    <lightning:card title="{!v.titleT}" iconName="{!v.titleIconName}">
+
+      <lightning:layout multipleRows="true" class="cardBody" horizontalAlign="spread" verticalAlign="start" pullToBoundary="small">
+
+        <aura:iteration items="{!v.resultList}" var="obj">
+
+          <lightning:layoutItem padding="1.5rem" size="12" flexibility="auto" largeDeviceSize="{!if(v.column == 1, 12, 6)}" mediumDeviceSize="{!if(v.column == 1, 12, 6)}" smallDeviceSize="{!if(v.column == 1, 12, 6)}">
+            <div style="margin-top: 0.5rem">
+              <lightning:icon iconName="{!v.itemIconName}"/>
+              <a href="{!if(v.type == 'Report','/lightning/r/Report/'+obj.Id+'/view','/')}" target="_blank" style="margin-left:1em">{!if(v.type == 'Report',obj.Name,obj.Title)}</a>
+            </div>
+          </lightning:layoutItem>
+
+        </aura:iteration>
+
+        <aura:if isTrue="{!if(v.resultList == null || v.resultList.size == 0,true,false)}">
+          <lightning:layoutItem padding="1.5rem" size="12" flexibility="auto" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+              {!$Label.c.QuickLinkNotAvailable}
+          </lightning:layoutItem>
+        </aura:if>
+
+
+      </lightning:layout>
+
+    </lightning:card>
+
+    <c:ServerActionService aura:id="serviceAction"/>
+
+</aura:component>

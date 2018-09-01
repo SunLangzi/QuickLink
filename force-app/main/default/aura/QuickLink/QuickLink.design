@@ -1,0 +1,20 @@
+<!--
+ - Created by Spring on 2018/9/1.
+ -->
+
+  <design:component label="配置">
+
+    <!--静态的-->
+    <design:attribute name="componentID"  label="类别"  description=""/>
+
+    <design:attribute name="type" datasource="Report,Doc" label="类别" default="Report" description="请选择类型"/>
+
+    <design:attribute name="titleIconName" label="IconName" description="组件标题" placeholder="组件标题" default="standard:account"/>
+
+    <design:attribute name="column" label="列数" description="显示几例" placeholder="显示几例" default="1" max="2" min="1"/>
+
+    <!-- 用来限制当前组件使用的对像 -->
+    <!--<sfdc:objects>-->
+    <!--<sfdc:object>Account</sfdc:object>-->
+    <!--</sfdc:objects>-->
+</design:component>

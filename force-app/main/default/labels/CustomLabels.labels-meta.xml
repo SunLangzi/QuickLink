@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>QuickLinkNotAvailable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>QuickLinkNotAvailable</shortDescription>
+        <value>No Available Data</value>
+    </labels>
+    <labels>
+        <fullName>QuickLinkReportTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>QuickLinkReportTitle</shortDescription>
+        <value>Report</value>
+    </labels>
+    <labels>
+        <fullName>QuickLinkUserManualTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>QuickLinkUserManualTitle</shortDescription>
+        <value>UserManual</value>
+    </labels>
+</CustomLabels>

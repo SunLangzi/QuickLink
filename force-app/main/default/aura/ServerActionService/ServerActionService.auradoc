@@ -1,0 +1,44 @@
+<!--
+ - Created by Spring on 2018/9/1.
+ -->
+
+<aura:documentation>
+    <aura:description>
+      <p>This is a generic and reusable Lightning component that calls server-side actions.
+        This is a service component so it has no user interface of it's own: it is meant to be called by other components.</p>
+
+      <p>Use the service by adding the component to a parent component's markup:</p>
+
+      <pre>&lt;c:ServerActionService aura:id="server"/&gt;</pre>
+
+      <p>Then, simply call a server-side action from the parent's component controller like this:</p>
+
+      <pre>
+// Get server action service
+const server = component.find('server');
+// Get server-side action
+const action = component.get('c.anAction');
+// Call server-side action with no parameters
+server.callServer(action);
+</pre>
+
+      <p>Server-side actions can also be called with parameters, custom success and error handlers:</p>
+
+      <pre>
+server.callServer(
+    action, // Server-side action
+    parameters, // Action parameters
+    false, // Disable cache
+    false, // Disable background
+    $A.getCallback(response => { // Custom success callback
+        // Handle response
+    }),
+    $A.getCallback(errors => { // Custom error callback
+        // Handle errors
+    })
+);
+</pre>
+
+
+    </aura:description>
+</aura:documentation>
